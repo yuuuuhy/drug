@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三級毒品 - 詳細資料</title>
+    <style>
+        /* Reset 基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header 樣式 */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-title {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* 內容區塊 */
+        .content {
+            margin-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .drug-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .drug-item:hover {
+            transform: scale(1.05);
+        }
+
+        .drug-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .drug-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .drug-info h3 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .drug-info a {
+            font-size: 16px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .drug-info a:hover {
+            color: #2E7D32;
+        }
+
+        /* 回首頁按鈕樣式 */
+        .home-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-btn:hover {
+            background-color: #2E7D32;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="site-title">三級毒品資料</div>
+    </header>
+
+    <div class="content">
+        <div class="drug-item">
+            <img src="file:///C:/Users/USER/Desktop/互動式網頁/images/15.jpg" alt="FM2" class="drug-image">
+            <div class="drug-info">
+                <h3>FM2</h3>
+                <a href="https://zh.wikipedia.org/zh-tw/%E5%B0%BC%E5%BA%B7FM2" target="_blank">了解更多</a>
+            </div>s
+        </div>
+
+        <div class="drug-item">
+            <img src="file:///C:/Users/USER/Desktop/互動式網頁/images/16.jpg" alt="丁基原啡因" class="drug-image">
+            <div class="drug-info">
+                <h3>丁基原啡因</h3>
+                <a href="https://zh.wikipedia.org/zh-tw/%E4%B8%81%E4%B8%99%E8%AB%BE%E5%95%A1" target="_blank">了解更多</a>
+            </div>
+        </div>
+
+        <div class="drug-item">
+            <img src="file:///C:/Users/USER/Desktop/互動式網頁/images/17.jpg" alt="K他命" class="drug-image">
+            <div class="drug-info">
+                <h3>K他命</h3>
+                <a href="https://zh.wikipedia.org/zh-tw/%E6%B0%AF%E8%83%BA%E9%85%AE" target="_blank">了解更多</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 回首頁按鈕 -->
+    <button class="home-btn" onclick="window.location.href='index.html'">回首頁</button>
+
+    <footer>
+        11246067 楊雨涵
+    </footer>
+
+</body>
+</html>

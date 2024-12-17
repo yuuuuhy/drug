@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藥品資料展示</title>
+    <style>
+        /* Reset 基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header 樣式 */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-title {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* 主要內容 */
+        .content {
+            display: flex;
+            margin: 20px auto;
+            max-width: 1200px;
+            gap: 20px;
+        }
+
+        /* 左側分級區塊 */
+        .level {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .level-item {
+            margin: 15px 0;
+            font-size: 26px;  /* 增加字體大小 */
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .level-item a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            display: block;
+        }
+
+        .level-item a:hover {
+            color: #2E7D32;
+            transform: translateX(5px);  /* 增加懸停時的效果 */
+        }
+
+        /* 輪播圖片區塊 */
+        .level-details {
+            margin-left: 20px;
+            flex: 1;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel {
+            height: 475px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 475px;
+            object-fit: cover;
+        }
+
+        /* 輪播按鈕 */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Footer 樣式 */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            font-size: 16px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="site-title">藥品資料展示</div>
+    </header>
+
+    <div class="content">
+        <!-- 左側 分級選單 -->
+        <div class="level">
+            <div class="level-item">毒品分級</div>
+            <!-- 一級毒品的鏈接，點擊後會跳轉到 level1.html -->
+            <div class="level-item"><a href="level1.html">一級</a></div>
+            <div class="level-item"><a href="level2.html">二級</a></div>
+            <div class="level-item"><a href="level3.html">三級</a></div>
+            <div class="level-item"><a href="level4.html">四級</a></div>
+        </div>
+
+        <!-- 右側 輪播圖片區塊 -->
+        <div class="level-details">
+            <div class="carousel">
+                <button class="prev">&lt;</button>
+                <div class="carousel-images">
+                    <img src="images/03.jpg" alt="圖片1">
+                    <img src="images/04.jpg" alt="圖片2">
+                    <img src="images/05.jpg" alt="圖片3">
+                    <img src="images/01.jpg" alt="圖片4">
+                    <img src="images/02.jpg" alt="圖片5">
+                </div>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        11246067 楊雨涵
+    </footer>
+
+    <script>
+        // 輪播功能
+        let index = 0;
+        const images = document.querySelector('.carousel-images');
+        const totalImages = document.querySelectorAll('.carousel-images img').length;
+
+        // 控制圖片輪播
+        function moveToNextImage() {
+            index = (index + 1) % totalImages;
+            images.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        // 每五秒自動輪播一次
+        setInterval(moveToNextImage, 5000);
+
+        // 手動輪播
+        document.querySelector('.next').addEventListener('click', moveToNextImage);
+        document.querySelector('.prev').addEventListener('click', () => {
+            index = (index - 1 + totalImages) % totalImages;
+            images.style.transform = `translateX(-${index * 100}%)`;
+        });
+    </script>
+
+</body>
+</html>
